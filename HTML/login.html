@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas with Login Form</title>
+  <style>
+
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #0a0a0a;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      color: white;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .login-header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .login-header p {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.8rem 1rem 0.8rem 2.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+    }
+
+    .form-input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 0.8rem;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-button:hover {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+    <canvas></canvas>
+
+    <div class="login-container">
+      <div class="login-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to continue your journey</p>
+      </div>
+  
+      <form id="loginForm" onsubmit="return handleLogin(event)">
+        <div class="form-group">
+          <input 
+            type="email" 
+            class="form-input" 
+            id="email" 
+            placeholder="Email address"
+            required
+          >
+          <i class="input-icon fas fa-envelope"></i>
+        </div>
+  
+        <div class="form-group">
+          <input 
+            type="password" 
+            class="form-input" 
+            id="password" 
+            placeholder="Password"
+            required
+          >
+          <i class="input-icon fas fa-lock"></i>
+        </div>
+  
+        <button type="submit" class="submit-button">Sign In</button>
+      </form>
+    </div>
+
+
+  <script>
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    class Ball {
+      constructor(x, y, speed, radius) {
+        this.x = x;
+        this.y = y;
+        this.speedX = speed;
+        this.speedY = speed;
+        this.radius = radius;
+        this.colorBall = this.color();
+      }
+
+      color() {
+        return `rgba(255,20,205,${Math.random() * .9 + .1})`;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.colorBall;
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      moveBall() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+          this.speedX = -this.speedX;
+        }
+
+        if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
+          this.speedY = -this.speedY;
+        }
+      }
+
+      colision(ball) {
+        ball.forEach((ball) => {
+          const ballx = ball.x - this.x;
+          const bally = ball.y - this.y;
+          const distance = Math.sqrt(ballx * ballx + bally * bally);
+
+          if (distance / 10 < ball.radius + this.radius) {
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(ball.x, ball.y);
+            ctx.strokeStyle = this.colorBall;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        });
+      }
+    }
+
+    class workspace {
+      constructor() {
+        this.balls = [];
+        this.mouseX = 0;
+        this.mouseY = 0;
+        canvas.addEventListener("mousemove", (e) => this.mouseMove(e));
+      }
+
+      mouseMove(e) {
+        this.mouseX = e.clientX;
+        this.mouseY = e.clientY;
+
+        this.balls.forEach((ball) => {
+          const ballx = this.mouseX - ball.x;
+          const bally = this.mouseY - ball.y;
+          const distance = Math.sqrt(ballx * ballx + bally * bally);
+
+          if (distance < ball.radius + 100) {
+            ball.speedX = -ballx / 100;
+            ball.speedY = -bally / 100;
+          }
+        });
+      }
+
+      drawLine() {
+        this.balls.forEach((ball) => {
+          const ballx = this.mouseX - ball.x;
+          const bally = this.mouseY - ball.y;
+          const distance = Math.sqrt(ballx * ballx + bally * bally);
+
+          if (distance / 1 < ball.radius + 100) {
+            ctx.beginPath();
+            ctx.moveTo(this.mouseX, this.mouseY);
+            ctx.lineTo(ball.x, ball.y);
+            ctx.strokeStyle = ball.colorBall;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        });
+      }
+
+      makeBalls() {
+        for (let i = 0; i < 200; i++) {
+          this.balls.push(
+            new Ball(
+              Math.random() * canvas.width,
+              Math.random() * canvas.height,
+              Math.random() * 1 + 0.2,
+              Math.random() * 3 + 0.2
+            )
+          );
+        }
+      }
+
+      clearBoard() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      update() {
+        this.clearBoard();
+        this.balls.forEach((ball) => {
+          ball.draw();
+          ball.moveBall();
+          ball.colision(this.balls);
+        });
+        this.drawLine();
+        requestAnimationFrame(() => this.update());
+      }
+    }
+
+    addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    const game = new workspace();
+    game.makeBalls();
+    game.update();
+  </script>
+</body>
+</html>

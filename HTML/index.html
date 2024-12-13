@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <title>PlaySpot</title>
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">PlaySpot</div>
+        <nav>
+                <a href="#" class="navbar">Home</a>
+                <a href="#" class="navbar">About</a>
+                <a href="#" class="navbar">Categories</a>
+                <a href="#" class="navbar">Contact</a>
+        </nav>
+        <!-- <button class="menu-toggle">☰</button> -->
+
+        <div class="box">
+            <form name="search">
+                <input type="text" placeholder="Search" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+            </form>
+            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>        
+        </div>
+      
+        <button class="gradient-border-button">
+            <span>Login</span>
+        </button>    
+    </header>
+    
+
+<div class="hero">
+    <h1>Bienvenue sur PlaySpot</h1>
+    <p>Des jeux pour tous les âges, où le plaisir commence !</p>
+    <button class="gradient-border-button">
+        <span>Explorer les catégories</span>
+    </button>
+</div>
+
+<section class="categories">
+
+    <h2>Nos Catégories</h2>
+    <div class="category-list">
+        <div class="category">
+            <img src="/IMAGES/jeux-educatif.jpg" alt="jeux educatifs">
+            <p>Les jeux educatifs</p>
+        </div>
+        <div class="category">
+            <img src="/IMAGES/jouets-musicaux.avif" alt="jouets-musicaux"><br>
+            <p>Les jouets-musicaux</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contactez-nous</h2>
+    <form action="#">
+        <input type="text" placeholder="pojk">
+        <input type="email" placeholder="Votre email" required>
+        <textarea placeholder="Votre message" rows="5" required></textarea>
+        <button class="gradient-border-button" id="Envoyer-contact">
+            <span>Envoyer</span>
+        </button>     
+    </form>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Entreprise</h4>
+                <ul>
+                    <li><a href="#">À propos de nous</a></li>
+                    <li><a href="#">Nos services</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Programme d'affiliation</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Obtenez de l'aide</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Livraison</a></li>
+                    <li><a href="#">Retours</a></li>
+                    <li><a href="#">Statut de commande</a></li>
+                    <li><a href="#">Options de paiement</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Magasin en ligne</h4>
+                <ul>
+                    <li><a href="#">Jouets pour bébés</a></li>
+                    <li><a href="#">Jeux éducatifs</a></li>
+                    <li><a href="#">Jouets d'extérieur</a></li>
+                    <li><a href="#">Peluches et poupées</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script src="/JS/script.js"></script>
+
+
+</body>
+</html>
