@@ -19,8 +19,8 @@ body {
 
 /* Header styles */
 header {
-    background-color: #FFCD27; /* Jaune */
-    color: #FFFFFF;
+    background-color: #FFF7AF; /* Jaune */
+    color: #000000;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -46,14 +46,14 @@ nav {
     text-decoration: none;
     font-size: 18px;
     position: relative;
-    color: white;
+    font-weight: bold;
 }
 
 .navbar::after {
     content: '';
     width: 0;
     height: 0.2vw;
-    background-color: #110A6C; 
+    background-color: #93FFC1; 
     position: absolute;
     left: 0;
     top: 1.5vw;
@@ -97,6 +97,57 @@ nav {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4);
 }
+
+
+
+
+
+
+/* Styles pour la section À propos */
+#about-section {
+   height: 80vh;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   background-image: url(/IMAGES/MacBook\ Pro\ 14_\ -\ 1.png);
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+}
+
+#about-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+#container{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  
+}
+#con2 img{
+    height: 300px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+
+
+
+
 
 /* Hero section */
 .hero {
@@ -150,7 +201,6 @@ nav {
 .categories {
     padding: 20px;
     text-align: center;
-    background-color: #ffffff; 
     height: 500px;
     display: flex;
     justify-content: center;
@@ -170,7 +220,7 @@ nav {
 }
 
 .categories .category {
-    background-color: #ffffff; /* Gris très clair */
+    background-color: #ffffff; 
     border: 1px solid #E0E0E0;
     border-radius: 10px;
     padding: 20px;
@@ -193,69 +243,39 @@ nav {
     font-weight: bold;
 }
 
-/* Contact section */
-.contact {
-    background-color: #a6d8ff; /* Bleu clair */
-    padding: 40px;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #FFFFFF;
-}
-
-.contact form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact input,
-.contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-
-
 /* Box styles */
 .box {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: fit-content;
 }
 
-.input {
+.input-search {
     padding: 10px;
     width: 50px;
     height: 50px;
     background: none;
-    border: 2px solid #ffffff;
+    border: 2px solid #000000;
     border-radius: 50px;
     box-sizing: border-box;
-    font-size: 26px;
-    color: #ffffff;
+    font-size: 16px;
+    color: #000000;
     outline: none;
-    transition: 0.5s;
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    transition: width 0.5s, background 0.5s, border-radius 0.5s, height 0.5s;
 }
 
-input::placeholder {
+.input-search::placeholder {
     color: transparent; /* Cache le placeholder par défaut */
     transition: color 0.3s ease;
-    padding-left: 10px;
-    font-size: 15px;
 }
 
-.box:hover input::placeholder {
+.box:hover .input-search::placeholder {
     color: #6a6a6a; /* Placeholder visible au hover */
 }
 
-.box:hover input {
+.box:hover .input-search {
     width: 250px;
     background: #ffffff;
     border-radius: 10px;
@@ -266,16 +286,19 @@ input::placeholder {
 .box i {
     position: absolute;
     top: 50%;
-    right: 10px;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    transition: 0.2s;
+    right: 17px;
+    transform: translate(0, -50%);
+    color: #000000;
+    transition: opacity 0.2s;
+
 }
 
 .box:hover i {
     opacity: 0;
     z-index: -1;
 }
+
+
 
 /* Primary Button styles */
 @import "https://unpkg.com/open-props";
@@ -328,13 +351,101 @@ input::placeholder {
 .primary-btn_pressed:hover {
   background-color: var(--gray-8);
 }
-#Envoyer-contact{
+/* #Envoyer-contact{
     background-color: #ffffff;
+} */
+
+#login-btn{
+    height: 30px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
 
 
+
+
+
+
+
+
+/*contact css style */
+
+#contact-section{
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2210775-jpeg.jpg') center center no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 80vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#contact-h1{
+    font-size: 40px;
+    color: #000000;
+    margin-top: 20px;
+     
+}
+
+.contact-us {
+    background: #ffffff;
+    padding: 50px 100px;
+    border: 2px solid rgba(0, 0, 0, 1);
+    box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgba(0, 0, 0, 1);
+    font-family: 'Fjalla One', sans-serif;
+    margin-bottom: 100px;
+
+  }
+
+  .cts-input {
+    display: block;
+    width: 100%;
+    font-size: 14pt;
+    line-height: 28pt;
+    margin-bottom: 28pt;
+    border: none;
+    border-bottom: 5px solid rgba(0, 0, 0, 1);
+    background: #f8f4e5;
+    min-width: 250px;
+    padding-left: 5px;
+    outline: none;
+    color: rgba(0, 0, 0, 1);
+  }
+
+  .cts-input:focus {
+    border-bottom: 5px solid #ffa580;
+  }
+
+  .contact-btn {
+    display: block;
+    margin: 0 auto;
+    line-height: 28pt;
+    padding: 0 20px;
+    background: #ffa580;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 1);
+    box-shadow: 3px 3px 1px 1px #95a4ff, 3px 3px 1px 2px rgba(0, 0, 0, 1);
+    cursor: pointer;
+  }
+
+  .contact-btn:hover {
+    background: rgba(0, 0, 0, 1);
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 1);
+  }
+
+  ::selection {
+    background: #ffc8ff;
+  }
 
 
 
@@ -366,7 +477,8 @@ ul{
 	list-style: none;
 }
 .footer{
-	background-color: #FFCD27;
+
+	background-color: #FFA580;
     padding: 70px 0;
 }
 .footer-col{
@@ -386,7 +498,7 @@ ul{
 	position: absolute;
 	left:0;
 	bottom: -10px;
-	background-color: #0b45a3;
+	background-color: #94A5FF;
 	height: 2px;
 	box-sizing: border-box;
 	width: 50px;

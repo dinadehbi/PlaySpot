@@ -4,19 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>tsParticles Confetti</title>
-  <link rel="stylesheet" href="/CSS/login.css">
+  <link rel="stylesheet" href="/CSS/signup.css">
 </head>
 <body>
 
-  <!-- Formulaire -->
+  <!-- Signup Form -->
   <div class="form-container">
-    <h1>Login</h1>
+    <h1>Signup</h1>
     <form>
+      <input type="text" placeholder="Votre nom" required><br>
       <input type="email" placeholder="Votre Email" required><br>
       <input type="password" placeholder="Votre mot de passe" required><br>
-      <button type="submit">Submit</button>
+      <input type="password" placeholder="Confirmer le mot de passe" required><br>
+      <button type="submit">S'inscrire</button>
     </form>
-    <p>Vous n'avez pas de compte ? <a href="/HTML/signup.html">S'inscrire</a></p> <!-- Lien vers la page d'inscription -->
   </div>
 
   <script type="module">
@@ -47,7 +48,7 @@
         },
         number: { value: 80 },
         color: {
-          value: ["#ffa580", "#95a4ff", "#ffc8ff", "#60a5fa", "#93ffc1", "#D62D33", "#FFF7AF"] /* Couleur rouge ajoutée */
+          value: ["#ffa580", "#95a4ff", "#ffc8ff", "#60a5fa", "#93ffc1", "#D62D33", "#FFF7AF"]
         },
         shape: { type: "circle" },
         opacity: { value: 1 },
@@ -60,7 +61,7 @@
           onClick: { enable: true, mode: "pop" }
         }
       },
-      background: { color: "white" }  /* Fond noir */
+      background: { color: "white" }
     };
 
     loadParticles(configs);

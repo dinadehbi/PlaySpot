@@ -14,21 +14,26 @@
     <header>
         <div class="logo">PlaySpot</div>
         <nav>
-                <a href="#" class="navbar">Home</a>
-                <a href="#" class="navbar">About</a>
+                <a href="#" class="navbar">Page d'accueil</a>
+                <a href="#" class="navbar"> À propos</a>
                 <a href="#" class="navbar">Categories</a>
                 <a href="#" class="navbar">Contact</a>
         </nav>
-        <!-- <button class="menu-toggle">☰</button> -->
 
         <div class="box">
             <form name="search">
-                <input type="text" placeholder="Search" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+                <input 
+                    type="text" 
+                    placeholder="Search" 
+                    class="input-search" 
+                    name="txt" 
+                    onblur="this.value = '';"
+                >
             </form>
-            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>        
+            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
         </div>
       
-        <button class="gradient-border-button">
+        <button class="gradient-border-button" id="login-btn">
             <span>Login</span>
         </button>    
     </header>
@@ -41,6 +46,28 @@
         <span>Explorer les catégories</span>
     </button>
 </div>
+
+
+<!-- A propos section -->
+
+<section id="about-section">
+    <h2>À propos de nous</h2>
+    <div id="container">
+        <div id="con1">
+            <p>PlaySpot est une plateforme de jeux éducatifs pour tous les âges, visant à rendre le jeu plus agréable et instructif.</p><br>
+            <p>Rejoignez-nous pour explorer une variété de jeux adaptés à tous.</p><br>
+            <button class="contact-btn">Explorez maintenant
+            </button>
+        </div>
+        <div id="con2">
+            <img src="/IMAGES/bck4.webp" alt="">
+        </div>
+    </div>
+    
+   
+</section>
+
+
 
 <section class="categories">
 
@@ -57,17 +84,18 @@
     </div>
 </section>
 
-<section class="contact">
-    <h2>Contactez-nous</h2>
-    <form action="#">
-        <input type="text" placeholder="pojk">
-        <input type="email" placeholder="Votre email" required>
-        <textarea placeholder="Votre message" rows="5" required></textarea>
-        <button class="gradient-border-button" id="Envoyer-contact">
-            <span>Envoyer</span>
-        </button>     
-    </form>
+<section id="contact-section">
+    <h1 id="contact-h1">contactez nous</h1>
+    <div class="contact-us">
+        <form action="#">
+          <input placeholder="Nom complet" type="text" class="cts-input" required>
+          <input placeholder="Email" type="email" class="cts-input" name="customerEmail">
+          <input placeholder="numéro de téléphone" class="cts-input" type="tel" name="customerPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+          <button type="button" class="contact-btn">Envoyer</button>
+        </form>
+    </div>
 </section>
+
 
 <footer class="footer">
     <div class="container">
