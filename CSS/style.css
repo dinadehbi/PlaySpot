@@ -3,7 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+}   
 
 *::-webkit-scrollbar {
     width: 0;
@@ -19,18 +19,19 @@ body {
 
 /* Header styles */
 header {
-    background-color: #FFF7AF; /* Jaune */
-    color: #000000;
-    padding: 15px 20px;
+    background-color: #ffffff; /* Jaune */
+    color: #ffffff;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 80px;
+    width: 100%;
+    height: 100px;
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
+#logo{
+    height: 100px;
+    width: 120px;
 }
 
 nav {
@@ -53,7 +54,7 @@ nav {
     content: '';
     width: 0;
     height: 0.2vw;
-    background-color: #93FFC1; 
+    background-color: #94A5FF; 
     position: absolute;
     left: 0;
     top: 1.5vw;
@@ -98,11 +99,6 @@ nav {
     box-shadow: 0 5px 15px rgba(96, 165, 250, 0.4);
 }
 
-
-
-
-
-
 /* Styles pour la section À propos */
 #about-section {
    height: 80vh;
@@ -111,48 +107,63 @@ nav {
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   background-image: url(/IMAGES/MacBook\ Pro\ 14_\ -\ 1.png);
+    background-image: url(/IMAGES/Aboute-bck.svg);
    background-repeat: no-repeat;
-   background-size: 100% 100%;
+   background-size: cover;
 }
 
 #about-section h2 {
-    font-size: 40px;
+    font-size: 34px;
     margin-bottom: 20px;
     color: #333;
 }
 
 #about-section p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
-    color: #555;
+    color: #000000;
     max-width: 800px;
     margin: 0 auto;
+
+}
+#about-section button{
+    margin-top: 30px;
 }
 #container{
     width: 100%;
     height: 50vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
   
+}
+#con1{
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+    
 }
 #con2 img{
     height: 300px;
     width: 350px;
     border-radius: 10px;
 }
-
-
-
-
-
-
+#h2-con{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Hero section */
 .hero {
     position: relative;
-    height: 60vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,50 +209,71 @@ nav {
 }
 
 /* Categories section */
-.categories {
-    padding: 20px;
-    text-align: center;
-    height: 500px;
+#categories {
+    height: 90vh;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-image: url(/IMAGES/Categories-background.png);
+    background-repeat: no-repeat;
+    background-size: cover; 
+
+}
+
+
+
+
+.category {
+    border: 2px solid rgba(0, 0, 0, 1);
+    box-shadow: 15px 15px 1px #ffc8ff, 15px 15px 1px 2px rgba(0, 0, 0, 1);
+    background-color: white;
+    font-family: 'Fjalla One', sans-serif;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
+ 
 }
 
-.categories h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
 
-.categories .category-list {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.categories .category {
-    background-color: #ffffff; 
-    border: 1px solid #E0E0E0;
-    border-radius: 10px;
-    padding: 20px;
-    width: 200px;
-    height: 200px;
-    margin-top: 50px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.categories .category img {
-    max-width: 100%;
-    border-radius: 8px;
+/* #categories .category img {
     height: 100px;
-    width: 200px;
+    width: 100px;
+} */
+#img-cat{
+    height: 130px;
+    width: 100%;
+    background-image: url(/IMAGES/jeux-educatif.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.category p {
+    font-weight: bold;
+    text-align: center;
+    padding-top:  20px;
+}
+#categories #h2-con{
+    text-align: center;
+    height: 120px;
+    width: 100%;
+    font-size: 30px;
+
+}
+#category-list{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.category p {
-    margin-top: 20px;
-    font-weight: bold;
-}
+
+
+
+
+
 
 /* Box styles */
 .box {
@@ -298,16 +330,14 @@ nav {
     z-index: -1;
 }
 
-
-
 /* Primary Button styles */
 @import "https://unpkg.com/open-props";
 
 :root {
   --gray-0: #ffffff;
-  --gray-6: #6dcfab;
+  --gray-6: #a1a1a1;
   --gray-8: #808080;
-  --gray-9: #95e0d2;
+  --gray-9: #5b5b5b;
   --radius-3: 8px;
   --font-size-3: 16px;
 }
@@ -365,21 +395,13 @@ nav {
 }
 
 
-
-
-
-
-
-
-
-
 /*contact css style */
 
 #contact-section{
     background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/image-from-rawpixel-id-2210775-jpeg.jpg') center center no-repeat;
     background-size: cover;
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -389,18 +411,18 @@ nav {
 
 #contact-h1{
     font-size: 40px;
-    color: #000000;
-    margin-top: 20px;
+    color: #333;
+    position: relative;
+    bottom: 50px;
      
 }
 
 .contact-us {
     background: #ffffff;
-    padding: 50px 100px;
+    padding: 100px 100px;
     border: 2px solid rgba(0, 0, 0, 1);
     box-shadow: 15px 15px 1px #ffa580, 15px 15px 1px 2px rgba(0, 0, 0, 1);
     font-family: 'Fjalla One', sans-serif;
-    margin-bottom: 100px;
 
   }
 
@@ -446,25 +468,6 @@ nav {
   ::selection {
     background: #ffc8ff;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .container{
 	max-width: 1170px;
 	margin:auto;
@@ -550,5 +553,28 @@ ul{
 }
 }
 
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    text-decoration: none;
+    font-size: 30px;
+}
 
+.whatsapp-icon:hover {
+    background-color: #1ebe57;
+}
 
+.err{
+    color: red;
+}

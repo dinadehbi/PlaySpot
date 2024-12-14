@@ -7,17 +7,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
     <title>PlaySpot</title>
+ 
+    
 
 </head>
 <body>
+    <a href="https://wa.me/1234567890" class="whatsapp-icon" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <header>
-        <div class="logo">PlaySpot</div>
+        <img src="/IMAGES/logo.png" alt="" id="logo">
+
         <nav>
                 <a href="#" class="navbar">Page d'accueil</a>
-                <a href="#" class="navbar"> À propos</a>
-                <a href="#" class="navbar">Categories</a>
-                <a href="#" class="navbar">Contact</a>
+                <a href="#about-section" class="navbar"> À propos</a>
+                <a href="#categories" class="navbar">Categories</a>
+                <a href="#contact-section" class="navbar">Contact</a>
         </nav>
 
         <div class="box">
@@ -33,7 +39,7 @@
             <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
         </div>
       
-        <button class="gradient-border-button" id="login-btn">
+        <button class="gradient-border-button" id="login-btn" style="border: 2px solid;">
             <span>Login</span>
         </button>    
     </header>
@@ -51,13 +57,14 @@
 <!-- A propos section -->
 
 <section id="about-section">
-    <h2>À propos de nous</h2>
+    <div id="h2-con">
+        <h2>À propos de nous</h2>
+
+    </div>
     <div id="container">
         <div id="con1">
-            <p>PlaySpot est une plateforme de jeux éducatifs pour tous les âges, visant à rendre le jeu plus agréable et instructif.</p><br>
-            <p>Rejoignez-nous pour explorer une variété de jeux adaptés à tous.</p><br>
-            <button class="contact-btn">Explorez maintenant
-            </button>
+            <p>PlaySpot est une plateforme de jeux éducatifs pour tous les âges, <br> visant à rendre le jeu plus agréable et instructif.</p><br>
+            <button class="contact-btn">Voir Les jeux</button>
         </div>
         <div id="con2">
             <img src="/IMAGES/bck4.webp" alt="">
@@ -68,29 +75,37 @@
 </section>
 
 
+<!-- categories section -->
 
-<section class="categories">
 
-    <h2>Nos Catégories</h2>
-    <div class="category-list">
+<section id="categories">
+    <div id="h2-con">
+        <h2>Nos Catégories</h2>
+    </div>
+
+    <div id="category-list">
         <div class="category">
-            <img src="/IMAGES/jeux-educatif.jpg" alt="jeux educatifs">
-            <p>Les jeux educatifs</p>
+            <div id="img-cat"></div>
+                <p>Les jouets-éducatif</p>
         </div>
         <div class="category">
-            <img src="/IMAGES/jouets-musicaux.avif" alt="jouets-musicaux"><br>
+            <div id="img-cat" style="background-image: url(/IMAGES/jouets-musicaux.avif);"></div>
             <p>Les jouets-musicaux</p>
         </div>
-    </div>
+
+    </div> <br>
+    <button class="contact-btn">Explorer</button>
+
 </section>
 
 <section id="contact-section">
-    <h1 id="contact-h1">contactez nous</h1>
     <div class="contact-us">
-        <form action="#">
+        <h1 id="contact-h1">contactez nous</h1>
+
+        <form action=""  method="post">
           <input placeholder="Nom complet" type="text" class="cts-input" required>
           <input placeholder="Email" type="email" class="cts-input" name="customerEmail">
-          <input placeholder="numéro de téléphone" class="cts-input" type="tel" name="customerPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+          <input placeholder="Numéro de téléphone" class="cts-input" type="tel" name="customerPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
           <button type="button" class="contact-btn">Envoyer</button>
         </form>
     </div>
@@ -134,7 +149,7 @@
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>

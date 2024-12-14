@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tsParticles Confetti</title>
-  <link rel="stylesheet" href="/CSS/signup.css">
+  <title>PlaySpot</title>
+  <link rel="stylesheet" href="/CSS/inscription.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
 </head>
 <body>
+    <section id="form-section">
+      <h1 id="form-h1">SignUp</h1>
+      <div class="form-us">
+          <form action="/HTML/signup.html" method="post">
+           <div class="err-con">
+            <span class="err"></span>
+           </div> 
+            <input placeholder="Votre nom" type="text" class="cts-input" name="name" required>
+            <input placeholder="Votre Email" class="cts-input" type="email" name="email" required>
+            <input placeholder="Votre mot de passe" class="cts-input" type="password" name="password" required>
+            <input placeholder="Confirmer le mot de passe" class="cts-input" type="password" name="password" required>
+            <button type="button" class="contact-btn">S'inscrire</button>
+          </form>
+      </div>
+  </section> 
 
-  <!-- Signup Form -->
-  <div class="form-container">
-    <h1>Signup</h1>
-    <form>
-      <input type="text" placeholder="Votre nom" required><br>
-      <input type="email" placeholder="Votre Email" required><br>
-      <input type="password" placeholder="Votre mot de passe" required><br>
-      <input type="password" placeholder="Confirmer le mot de passe" required><br>
-      <button type="submit">S'inscrire</button>
-    </form>
-  </div>
+<div>
+  
+</div>
 
   <script type="module">
     import { tsParticles } from "https://cdn.jsdelivr.net/npm/@tsparticles/engine@3.1.0/+esm";

@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tsParticles Confetti</title>
-  <link rel="stylesheet" href="/CSS/login.css">
+  <title>PlaySpot</title>
+  <link rel="stylesheet" href="/CSS/inscription.css">
 </head>
-<body>
+<body style="display: flex; justify-content: center; align-items: center;"> 
 
-  <!-- Formulaire -->
-  <div class="form-container">
-    <h1>Login</h1>
-    <form>
-      <input type="email" placeholder="Votre Email" required><br>
-      <input type="password" placeholder="Votre mot de passe" required><br>
-      <button type="submit">Submit</button>
-    </form>
-    <p>Vous n'avez pas de compte ? <a href="/HTML/signup.html">S'inscrire</a></p> <!-- Lien vers la page d'inscription -->
-  </div>
+  <section id="form-section" style="margin-left: 1300px;">
+    <h1 id="form-h1">Login</h1>
+    <div class="form-us">
+        <form action="#">
+          <input placeholder="Votre Email" class="cts-input" type="email" name="email" required>
+          <input placeholder="Votre mot de passe" class="cts-input" type="password" name="password" required>
+          <button type="button" class="contact-btn">Envoyer</button>
+        </form>
+        
+        <div id="link-con">
+          <p>Vous n'avez pas de compte ? <a href="/HTML/signup.html">S'inscrire</a></p> <!-- Lien vers la page d'inscription -->
+        </div>
+
+    </div>
+</section> 
 
   <script type="module">
     import { tsParticles } from "https://cdn.jsdelivr.net/npm/@tsparticles/engine@3.1.0/+esm";
@@ -47,7 +52,7 @@
         },
         number: { value: 80 },
         color: {
-          value: ["#ffa580", "#95a4ff", "#ffc8ff", "#60a5fa", "#93ffc1", "#D62D33", "#FFF7AF"] /* Couleur rouge ajoutée */
+          value: ["#ffa580","#ffc8ff", "#95a4ff","#60a5fa", "#93ffc1", "#000", "#FFF7AF"] /* Couleur rouge ajoutée */
         },
         shape: { type: "circle" },
         opacity: { value: 1 },
