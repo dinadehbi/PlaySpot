@@ -20,11 +20,10 @@ body {
 /* Header styles */
 header {
     background-color: #ffffff; /* Jaune */
-    color: #ffffff;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 80px;
+    height: 70px;
     width: 100%;
     height: 100px;
 }
@@ -37,9 +36,10 @@ header {
 nav {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 60%;
-    height: 30px;
+    justify-content: space-between;
+    width: 85%;
+    height: auto;
+    margin-right: 30px;
 }
 
 .navbar {
@@ -103,19 +103,16 @@ nav {
 #about-section {
    height: 80vh;
    width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-    background-image: url(/IMAGES/Aboute-bck.svg);
+    background-image: url(../IMAGES/Aboute-bck.svg);
    background-repeat: no-repeat;
    background-size: cover;
 }
 
 #about-section h2 {
     font-size: 34px;
-    margin-bottom: 20px;
     color: #333;
+    position: relative;
+    top: 20px;
 }
 
 #about-section p {
@@ -131,7 +128,7 @@ nav {
 }
 #container{
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -150,16 +147,23 @@ nav {
 }
 #con2 img{
     height: 300px;
-    width: 350px;
-    border-radius: 10px;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
 }
-#h2-con{
+#about-h2{
     width: 100%;
-    height: 150px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
+
+
+
+
 /* Hero section */
 .hero {
     position: relative;
@@ -214,7 +218,7 @@ nav {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url(/IMAGES/Categories-background.png);
+    background-image: url(../IMAGES/Categories-background.png);
     background-repeat: no-repeat;
     background-size: cover; 
 
@@ -225,11 +229,11 @@ nav {
 
 .category {
     border: 2px solid rgba(0, 0, 0, 1);
-    box-shadow: 15px 15px 1px #ffc8ff, 15px 15px 1px 2px rgba(0, 0, 0, 1);
+    box-shadow: 15px 15px 1px #95a4ff, 15px 15px 1px 2px rgba(0, 0, 0, 1);
     background-color: white;
     font-family: 'Fjalla One', sans-serif;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -245,14 +249,15 @@ nav {
 #img-cat{
     height: 130px;
     width: 100%;
-    background-image: url(/IMAGES/jeux-educatif.jpg);
+    background-image: url(../IMAGES/jeux-educatif.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .category p {
     font-weight: bold;
     text-align: center;
-    padding-top:  20px;
+    margin-top: 50px;
+    font-size: 20px;
 }
 #categories #h2-con{
     text-align: center;
@@ -261,6 +266,11 @@ nav {
     font-size: 30px;
 
 }
+#h2-con h2{
+    position: relative;
+    top: 15px;
+}
+
 #category-list{
     width: 100%;
     height: 450px;

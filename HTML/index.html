@@ -3,45 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-
     <title>PlaySpot</title>
- 
-    
-
-</head>
+    </head>
 <body>
     <a href="https://wa.me/1234567890" class="whatsapp-icon" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <header>
-        <img src="/IMAGES/logo.png" alt="" id="logo">
-
+        <img src="../IMAGES/logo.png" alt="" id="logo">
         <nav>
                 <a href="#" class="navbar">Page d'accueil</a>
                 <a href="#about-section" class="navbar"> À propos</a>
                 <a href="#categories" class="navbar">Categories</a>
                 <a href="#contact-section" class="navbar">Contact</a>
-        </nav>
 
-        <div class="box">
-            <form name="search">
-                <input 
-                    type="text" 
-                    placeholder="Search" 
-                    class="input-search" 
-                    name="txt" 
-                    onblur="this.value = '';"
-                >
-            </form>
-            <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
-        </div>
-      
-        <button class="gradient-border-button" id="login-btn" style="border: 2px solid;">
-            <span>Login</span>
-        </button>    
+                <div class="box">
+                    <form name="search">
+                        <input 
+                            type="text" 
+                            placeholder="Search" 
+                            class="input-search" 
+                            name="txt" 
+                            onblur="this.value = '';"
+                        >
+                    </form>
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+                </div>
+              
+                <button class="gradient-border-button" id="login-btn" style="border: 2px solid;">
+                    <span>Login</span>
+                </button>   
+        </nav>
+        <div id="user-info"></div>
+
+
+       
     </header>
     
 
@@ -57,9 +56,8 @@
 <!-- A propos section -->
 
 <section id="about-section">
-    <div id="h2-con">
+    <div id="about-h2">
         <h2>À propos de nous</h2>
-
     </div>
     <div id="container">
         <div id="con1">
@@ -67,7 +65,7 @@
             <button class="contact-btn">Voir Les jeux</button>
         </div>
         <div id="con2">
-            <img src="/IMAGES/bck4.webp" alt="">
+            <img src="../IMAGES/zone-jeux.jpg" alt="">
         </div>
     </div>
     
@@ -89,12 +87,11 @@
                 <p>Les jouets-éducatif</p>
         </div>
         <div class="category">
-            <div id="img-cat" style="background-image: url(/IMAGES/jouets-musicaux.avif);"></div>
+            <div id="img-cat" style="background-image: url(../IMAGES/jouets-musicaux.avif);"></div>
             <p>Les jouets-musicaux</p>
         </div>
-
-    </div> <br>
-    <button class="contact-btn">Explorer</button>
+    </div> 
+    <button class="contact-btn" style="margin-bottom: 50px;">Explorer</button>
 
 </section>
 
@@ -157,7 +154,7 @@
 </footer>
 
 
-<script src="/JS/script.js"></script>
+<script src="../JS/script.js"></script>
 
 
 </body>

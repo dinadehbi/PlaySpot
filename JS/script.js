@@ -1,6 +1,6 @@
 
 document.querySelector('.gradient-border-button').addEventListener('click', () => {
-    window.location.href = 'login.html'; // Remplacez 'login.html' par le chemin de votre fichier.
+    window.location.href = '../PHP/login.php'; // Remplacez 'login.html' par le chemin de votre fichier.
 });
 
 
@@ -291,5 +291,27 @@ class Firework {
       }
   }
 
+
+
+  // user name data affichage 
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch("get_user.php")
+      .then(response => response.json())
+      .then(data => {
+        const userInfoDiv = document.getElementById("user-info");
+        if (data.username) {
+          userInfoDiv.innerHTML = `<div class="user-icon">
+            <i class="fas fa-user"></i>
+            <span>${data.username}</span>
+            <a href="logout.php" style="margin-left: 10px; color: red;">Déconnexion</a>
+          </div>`;
+        } else {
+          userInfoDiv.innerHTML = `<a href="login.php">Se connecter</a>`;
+        }
+      })
+      .catch(error => console.error("Error fetching user:", error));
+  });
 
 
